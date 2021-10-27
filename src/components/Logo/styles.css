@@ -1,0 +1,12 @@
+.logo-box {
+  display: flex;
+  width: 352px;
+}
+
+.component-logo-img {
+  background-repeat: no-repeat;
+  background-position: 0 -130px;
+  width: 175px;
+  height: 91px;
+  margin: 16px 86.5px;
+}

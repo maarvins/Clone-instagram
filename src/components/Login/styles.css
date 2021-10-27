@@ -1,0 +1,191 @@
+.main {
+  width: auto;
+  height: auto;
+  background-color: #fafafa;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 1px auto 0;
+}
+
+.login-img-cel {
+  align-self: center;
+  background-image: url("https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png");
+  background-position: 0 0;
+  background-size: 454px 618px;
+  flex-basis: 454px;
+  height: 608px;
+  margin-left: -35px;
+  margin-right: -15px;
+  left: 40%;
+  z-index: 0;
+}
+
+.photo-login-static {
+  height: 427px;
+  position: absolute;
+  top: 0;
+  width: 240px;
+  z-index: 1;
+}
+
+.phone-img-box {
+  position: relative;
+  margin: 99px 0 0 151px;
+}
+
+.form {
+  background: #fff;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0 6px;
+  width: 350px;
+  height: 365px;
+}
+
+.component-form-placeholder {
+  color: #8e8e8e;
+  height: 36px;
+  left: 5px;
+  bottom: -10px;
+  line-height: 36px;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  text-overflow: ellipsis;
+  transform-origin: left;
+}
+
+.component-input-login {
+  align-items: center;
+  max-width: 350px;
+  justify-content: center;
+}
+
+input {
+  background: #fafafa;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+  width: 258px;
+  height: 36px;
+  color: #8e8e8e;
+  flex: 1 0 auto;
+  margin: 0 0 5px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 7px;
+  text-overflow: ellipsis;
+}
+
+input::placeholder {
+  color: #dbdbdb;
+}
+
+.fb-box {
+  appearance: none;
+  background: 0 0;
+  border: none;
+}
+
+.btn-login {
+  background: #0095f6;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 5px 9px;
+  text-align: center;
+  width: 266px;
+  height: 36px;
+  font: inherit;
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.fb-icon {
+  display: inline-block;
+  margin-right: 8px;
+  position: relative;
+  top: 3px;
+  width: 16px;
+  height: 26px;
+}
+
+.fb-box {
+  color: #385185;
+  text-decoration: none;
+}
+
+.creat-acc {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  width: 350px;
+  height: 65px;
+  text-align: center;
+}
+
+.download-store {
+  text-align: center;
+}
+
+.btn-store {
+  height: 40px;
+}
+
+.add-login-way {
+  color: #8e8e8e;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15px;
+  margin: 18px 0;
+  text-transform: uppercase;
+}
+
+.link-login-fb {
+  text-decoration: none;
+  color: #385185;
+  font: inherit;
+  font-weight: 600;
+}
+
+.create-acc {
+  color: #0095f6;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+  .main {
+    background-color: #fafafa;
+  }
+
+  .login-img-cel {
+    display: none;
+  }
+
+  .form {
+    border: none;
+    background-color: #fafafa;
+    margin: 0 auto;
+  }
+  .btn-store {
+    margin: 0 8px 0;
+  }
+
+  .creat-acc {
+    background-color: #fafafa;
+    border: none;
+    height: 40px;
+  }
+}
