@@ -1,18 +1,11 @@
 import Avatar from "../Avatar"
 import {CommentList} from "../Comments"
 import CommentForm from "../CommentForm"
+import "./styles.css"
 
 function Post(props) {
   return (
-    <div
-      style={{
-        border: 1,
-        borderColor: "black",
-        borderStyle: "solid",
-        backgroundColor: "white",
-        textAlign: "center"
-      }}
-    >
+    <div className="post-component">
       <Avatar name={props.data.username} />
       <p
         style={{

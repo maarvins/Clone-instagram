@@ -1,11 +1,13 @@
+import "./styles.css"
+
 function Avatar(props) {
   return (
-    <div>
-      <span style={{fontSize: 16, fontStyle: "bold", marginRight: 15}}>
-        {props.name}
-      </span>
-      <small> 27 Oct 2021 - 18:00 </small>
-      <br />
+    <div className="avatar-container">
+      <div className="avatar-picture"></div>
+      <div className="avatar-info">
+        <span style={{fontSize: 14, fontWeight: 600}}>{props.name}</span>
+        <small style={{fontSize: 12}}>13 Oct 2021 - 23:30</small>
+      </div>
     </div>
   )
 }

@@ -1,8 +1,10 @@
-function CommentForm() {
+import "./styles.css"
+
+function CommentForm(props) {
   return (
-    <div>
-      <input placeholder={"Escreva um comentario"}></input>
-      <button>Comentar</button>
+    <div className="component-form-container">
+      <input className="component-form-input" placeholder={props.placeholder} />
+      <button className="component-form-button">Publicar</button>
     </div>
   )
 }

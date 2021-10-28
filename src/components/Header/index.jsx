@@ -1,8 +1,14 @@
+import "./styles.css"
+
 function Header() {
   return (
-    <h1 style={{border: 1, borderColor: "black", borderStyle: "solid"}}>
-      Marcus Instagram Clone
-    </h1>
+    <div className="header-container">
+      <img
+        src="/assets/instagram-logo.png"
+        alt="logo do instagram"
+        width="115px"
+      />
+    </div>
   )
 }
 

@@ -12,12 +12,12 @@ const posts = [
     message: "Top!!!",
     comments: [
       {
-        username: "izzie",
+        username: "Izzie",
         date: "20 Oct 2021 - 21:00",
         message: "isto é sensacional!"
       },
       {
-        username: "robbert",
+        username: "Robbert",
         date: "29 Oct 2021 - 11:00",
         message: "hmm....."
       }

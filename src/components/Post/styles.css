@@ -1,0 +1,9 @@
+.post-component {
+  border: 1;
+  border-color: black;
+  border-style: solid;
+  background-color: white;
+  text-align: center;
+  width: 80%;
+  margin: 20px;
+}
