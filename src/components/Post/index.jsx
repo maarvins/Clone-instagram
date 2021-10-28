@@ -5,25 +5,26 @@ import "./styles.css"
 
 function Post(props) {
   return (
-    <div className="post-component">
+    <div className="post-container">
       <Avatar name={props.data.username} />
-      <p
-        style={{
-          border: 1,
-          borderColor: "silver",
-          borderStyle: "solid",
-          textAlign: "center",
-          margin: 20,
-          padding: 10
-        }}
-      >
-        {
-          props.data.message
-          /*s se props data existir, printar ela... caso contrario, printar FAKE MESSAGE */
-        }
-      </p>
+
+      {props && props.data && props.data.image ? (
+        <img
+          style={{marginTop: 10}}
+          src={props.data.image}
+          width="100%"
+          alt="river"
+        />
+      ) : (
+        <p className="post-message">
+          {
+            props.data.message
+            /*s se props data existir, printar ela... caso contrario, printar FAKE MESSAGE */
+          }
+        </p>
+      )}
       <CommentList comments={props.data.comments} />
-      <CommentForm />
+      <CommentForm buttonText="Comentar" placeholder="Escreva um comentário" />
     </div>
   )
 }

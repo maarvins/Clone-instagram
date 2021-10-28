@@ -1,7 +1,8 @@
 .component-form-container {
+  background: white;
   display: flex;
   flex: 1;
-  border-top: 1px solid var(--lightBorder);
+  border: 1px solid var(--lightBorder);
   padding: 10px;
 }
 

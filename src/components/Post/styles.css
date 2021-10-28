@@ -1,9 +1,12 @@
-.post-component {
-  border: 1;
-  border-color: black;
-  border-style: solid;
+.post-container {
+  margin-top: 20px;
+  border: 1px solid var(--darkBorder);
   background-color: white;
-  text-align: center;
-  width: 80%;
-  margin: 20px;
+  padding-top: 10px;
+}
+
+.post-message {
+  border-top: 1px solid var(--lightBorder);
+  border-bottom: 1px solid var(--lightBorder);
+  padding: 10px;
 }

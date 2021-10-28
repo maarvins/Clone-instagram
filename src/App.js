@@ -1,7 +1,8 @@
 import "./App.css"
 import Header from "./components/Header"
-import PostForm from "./components/PostForm"
 import Post from "./components/Post"
+import CommentForm from "./components/CommentForm"
+import Colors from "./styles/colors"
 
 //formas de se criar objetos e utilizalos (dados para posts)
 
@@ -10,6 +11,7 @@ const posts = [
     username: "Kalleb Keller",
     date: "20 Oct 2021 - 19:00",
     message: "Top!!!",
+    image: "/assets/paisagem.jpg",
     comments: [
       {
         username: "Izzie",
@@ -38,13 +40,31 @@ posts.push({
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <PostForm />
-      {posts.map((post) => {
-        //cada post é um item do array de posts
-        return <Post data={post} />
-      })}
+    <div>
+      <div
+        style={{
+          width: "100vw",
+          backgroundColor: "white",
+          borderBottom: `1px solid ${Colors.darkBorder}`,
+          marginBottom: "40px"
+        }}
+      >
+        <Header />
+      </div>
+      <div style={{maxWidth: "614px", margin: "auto"}}>
+        <CommentForm
+          styles={{
+            border: `1px solid ${Colors.darkBorder}`,
+            backgroundColor: "white"
+          }}
+          buttonColor={Colors.red}
+          placeholder="Faça uma publicação"
+          buttonText="Publicar"
+        />
+        {posts.map((post) => (
+          <Post data={post} />
+        ))}
+      </div>
     </div>
   )
 }
