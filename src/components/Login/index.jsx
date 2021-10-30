@@ -8,6 +8,8 @@ function Login() {
   const [login, setLogin] = React.useState("")
   const [password, setPassword] = React.useState("")
 
+  console.log(process.env.REACT_APP_CLIENT_TOKEN)
+
   return (
     <div className="main">
       <div className="row">
