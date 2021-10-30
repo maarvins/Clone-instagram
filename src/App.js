@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import Post from "./components/Post"
 import CommentForm from "./components/CommentForm"
 import Colors from "./styles/colors"
+import Login from "./components/Login"
 
 //formas de se criar objetos e utilizalos (dados para posts)
 
@@ -39,6 +40,11 @@ posts.push({
 })
 
 function App() {
+  const showLogin = true
+  if (showLogin) {
+    return <Login />
+  }
+
   return (
     <div>
       <div

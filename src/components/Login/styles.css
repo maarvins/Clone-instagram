@@ -110,6 +110,11 @@ input::placeholder {
     Arial, sans-serif;
   font-size: 14px;
   font-weight: 600;
+  opacity: 1;
+}
+
+.disable {
+  opacity: 0.3;
 }
 
 .fb-icon {
