@@ -4,7 +4,7 @@ import Logo from "../Logo"
 import {MdFacebook} from "react-icons/md"
 import api from "../../utils/api"
 
-function Login() {
+function Login(props) {
   //ESTADOS
   const [userName, setUserName] = React.useState("")
   const [email, setEmail] = React.useState("")
@@ -23,9 +23,12 @@ function Login() {
     api
       .post("/login", data)
       .then((response) => {
+        //SUCESSO!!!!
         setLoading(false)
+        props.onLogin(response.data)
       })
       .catch((error) => {
+        //FALHAAA!!!
         setLoading(false)
       })
   }

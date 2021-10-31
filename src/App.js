@@ -1,3 +1,4 @@
+import React from "react"
 import "./App.css"
 import Header from "./components/Header"
 import Post from "./components/Post"
@@ -40,9 +41,14 @@ posts.push({
 })
 
 function App() {
-  const showLogin = true
+  const [showLogin, setShowLogin] = React.useState(true)
+
   if (showLogin) {
-    return <Login />
+    return (
+      <Login
+        onLogin={(user) => (user ? setShowLogin(false) : setShowLogin(true))}
+      />
+    )
   }
 
   return (
