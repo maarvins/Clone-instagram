@@ -7,6 +7,9 @@ const headers = {
   "client-token": process.env.REACT_APP_CLIENT_TOKEN
 }
 
-export const api = axios.create({
-  headers
+const api = axios.create({
+  headers,
+  baseURL: "https://instagram--clone--api.herokuapp.com"
 })
+
+export default api

@@ -2,14 +2,33 @@ import React from "react"
 import "./styles.css"
 import Logo from "../Logo"
 import {MdFacebook} from "react-icons/md"
+import api from "../../utils/api"
 
 function Login() {
   //ESTADOS
-  const [login, setLogin] = React.useState("")
+  const [userName, setUserName] = React.useState("")
+  const [email, setEmail] = React.useState("")
   const [password, setPassword] = React.useState("")
+  const [error, setError] = React.useState(null)
+  const [loading, setLoading] = React.useState(false)
 
-  console.log(process.env.REACT_APP_CLIENT_TOKEN)
-
+  //FUNÇÕES
+  const loginUser = () => {
+    const data = {
+      name: userName,
+      email: email,
+      password: password
+    }
+    setLoading(true)
+    api
+      .post("/login", data)
+      .then((response) => {
+        setLoading(false)
+      })
+      .catch((error) => {
+        setLoading(false)
+      })
+  }
   return (
     <div className="main">
       <div className="row">
@@ -30,9 +49,19 @@ function Login() {
             <div className="input-form">
               <input
                 type="text"
-                placeholder="Phone number, username or email"
-                value={login}
-                onChange={(event) => setLogin(event.target.value)}
+                id="userName"
+                placeholder="username"
+                value={userName}
+                onChange={(event) => setUserName(event.target.value)}
+              ></input>
+            </div>
+            <div>
+              <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
               ></input>
             </div>
 
@@ -48,13 +77,22 @@ function Login() {
             <div>
               <button
                 className={
-                  login.length < 5 || password.length < 4
+                  userName.length < 5 ||
+                  email.search("@") === -1 ||
+                  password.length < 4 ||
+                  loading
                     ? "btn-login disable"
                     : "btn-login"
                 }
-                disable={login.length < 5 || password.length < 4}
+                disable={
+                  userName.length < 5 ||
+                  email.search("@") === -1 ||
+                  password.length < 4 ||
+                  loading
+                }
+                onClick={() => loginUser()}
               >
-                Log In
+                {!loading ? "Log In" : "Loading..."}
               </button>
             </div>
             <div>
