@@ -41,8 +41,8 @@ posts.push({
 })
 
 function App() {
-  const acessToken = localStorage.getItem("acessToken")
-  const [showLogin, setShowLogin] = React.useState(!acessToken)
+  const accessToken = localStorage.getItem("accessToken")
+  const [showLogin, setShowLogin] = React.useState(!accessToken)
 
   if (showLogin) {
     return (

@@ -4,7 +4,8 @@
 import axios from "axios"
 
 const headers = {
-  "client-token": process.env.REACT_APP_CLIENT_TOKEN
+  "client-token": process.env.REACT_APP_CLIENT_TOKEN,
+  "user-token": localStorage.getItem("accessToken")
 }
 
 const api = axios.create({

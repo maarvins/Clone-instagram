@@ -26,7 +26,8 @@ function Login(props) {
         //SUCESSO!!!!
         setLoading(false)
         props.onLogin(response.data)
-        localStorage.setItem("acessToken", response.data.acessToken)
+        localStorage.setItem("accessToken", response.data.accessToken)
+        api.defaults.headers.common["user-token"] = response.data.accessToken
       })
       .catch((error) => {
         //FALHAAA!!!
