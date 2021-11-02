@@ -6,12 +6,12 @@ import "./styles.css"
 function Post(props) {
   return (
     <div className="post-container">
-      <Avatar name={props.data.username} />
+      <Avatar name={props.data.user.name} createdAt={props.data.createdAt} />
 
-      {props && props.data && props.data.image ? (
+      {props && props.data && props.data.photoUrl ? (
         <img
           style={{marginTop: 10}}
-          src={props.data.image}
+          src={props.data.photoUrl}
           width="100%"
           alt="river"
         />
