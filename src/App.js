@@ -2,6 +2,7 @@ import React from "react"
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import Login from "./components/Login"
 import {Timeline as TimelineView} from "./components/Timeline"
+import {PostView} from "./components/PostView"
 
 import "./App.css"
 
@@ -10,9 +11,8 @@ const PrivatesRoutes = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact={true}>
-          <TimelineView />
-        </Route>
+        <Route path="/post/:id" component={PostView} />
+        <Route path="/" exact={true} component={TimelineView} />
         <Route path="*">
           <div>
             <h1>404 - Não há nada por aqui ! </h1>

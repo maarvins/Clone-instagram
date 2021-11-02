@@ -7,43 +7,16 @@ import api from "../../utils/api"
 import Colors from "../../styles/colors"
 import "./styles.css"
 
-const posts = [
-  {
-    username: "Kalleb Keller",
-    date: "20 Oct 2021 - 19:00",
-    message: "Top!!!",
-    image: "/assets/paisagem.jpg",
-    comments: [
-      {
-        username: "Izzie",
-        date: "20 Oct 2021 - 21:00",
-        message: "isto é sensacional!"
-      },
-      {
-        username: "Robbert",
-        date: "29 Oct 2021 - 11:00",
-        message: "hmm....."
-      }
-    ]
-  },
-  {
-    username: "Isaac Sena",
-    date: "23 Oct 2021 - 21:30",
-    message: "Ok. Incrivel!"
-  }
-]
-
-posts.push({
-  username: "Sansão",
-  date: "30 Oct 2021 - 19:00",
-  message: "QUERO SAIR DO CANIL! "
-})
-
 export const Timeline = (props) => {
+  console.log("Render da Timeline")
   const [postList, setPostList] = React.useState([])
+  console.log("PostList: ", postList)
 
   React.useEffect(() => {
-    api.get("/post").then((response) => setPostList(response.data))
+    api
+      //interagindo com os posts dos outros membros do treinamento utilizando all-clients true
+      .get("/post", {headers: {"all-clients": true}})
+      .then((response) => setPostList(response.data))
   }, [])
 
   console.log("Render da Timeline")
@@ -73,7 +46,13 @@ export const Timeline = (props) => {
         {postList.length === 0 ? (
           <p>Loading...</p>
         ) : (
-          postList.map((post) => <Post data={post} />)
+          postList.map((post) => (
+            <Post
+              onClick={() => props.history.push(`/post/${post.id}`)}
+              data={post}
+              key={post.id}
+            />
+          ))
         )}
       </div>
     </div>
