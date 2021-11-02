@@ -42,6 +42,7 @@ export const Timeline = (props) => {
           buttonColor={Colors.red}
           placeholder="Faça uma publicação"
           buttonText="Publicar"
+          onPublish={(post) => setPostList([post, ...postList])} //setando nova postagem dentro do array de PostList
         />
         {postList.length === 0 ? (
           <p>Loading...</p>

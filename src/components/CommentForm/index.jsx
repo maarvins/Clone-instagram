@@ -7,13 +7,22 @@ function CommentForm(props) {
   const [photoUrl, setPhotoUrl] = React.useState("")
 
   const submitPost = async () => {
-    const data = {
-      photoUrl: photoUrl,
-      description: "just a post"
+    try {
+      //objeto que estará sendo enviado para a API (post)
+      const data = {
+        photoUrl: photoUrl,
+        description: "just a post"
+      }
+      //Enviando post para API
+      console.log("vou postar!")
+      const response = await api.post("/post", data)
+      console.log(response)
+
+      props.onPublish(response.data)
+      setPhotoUrl("")
+    } catch (error) {
+      console.error(error)
     }
-    console.log("vou postar!")
-    const response = await api.post("/post", data)
-    console.log(response)
   }
 
   return (
