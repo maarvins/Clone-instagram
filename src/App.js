@@ -5,28 +5,55 @@ import {Timeline as TimelineView} from "./components/Timeline"
 
 import "./App.css"
 
-//formas de se criar objetos e utilizalos (dados para posts)
-
-function App() {
-  const accessToken = localStorage.getItem("accessToken")
-  const [showLogin, setShowLogin] = React.useState(!accessToken)
-
+//ROTAS PRIVADAS - ACESSO SOMENTE AO ESTAR LOGADO
+const PrivatesRoutes = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/entrar">
-          <Login
-            onLogin={(user) =>
-              user ? setShowLogin(false) : setShowLogin(true)
-            }
-          />
-        </Route>
-        <Route path="/">
+        <Route path="/" exact={true}>
           <TimelineView />
+        </Route>
+        <Route path="*">
+          <div>
+            <h1>404 - Não há nada por aqui ! </h1>
+          </div>
         </Route>
       </Switch>
     </Router>
   )
+}
+//ROTAS PUBLICAS - ACESSO SEM ESTAR LOGADO
+const PublicRoutes = (props) => {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <Login
+            onLogin={(user) =>
+              user ? props.onLogin(true) : props.onLogin(false)
+            }
+          />
+        </Route>
+        <Route path="*">
+          <div>
+            <h1>404 - Não há nada por aqui ! </h1>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
+  )
+}
+
+//formas de se criar objetos e utilizalos (dados para posts)
+function App() {
+  const accessToken = localStorage.getItem("accessToken")
+  const [isAuthenticated, setIsAuthenticated] = React.useState(!!accessToken)
+
+  if (isAuthenticated) {
+    return <PrivatesRoutes />
+  } else {
+    return <PublicRoutes onLogin={setIsAuthenticated} />
+  }
 }
 
 export default App

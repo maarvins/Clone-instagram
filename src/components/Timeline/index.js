@@ -1,6 +1,9 @@
+import React from "react"
 import Header from "../Header"
 import Post from "../Post"
 import CommentForm from "../CommentForm"
+import api from "../../utils/api"
+
 import Colors from "../../styles/colors"
 import "./styles.css"
 
@@ -37,6 +40,14 @@ posts.push({
 })
 
 export const Timeline = (props) => {
+  const [postList, setPostList] = React.useState([])
+
+  React.useEffect(() => {
+    api.get("/post").then((response) => setPostList(response.data))
+  }, [])
+
+  console.log("Render da Timeline")
+
   return (
     <div>
       <div
@@ -59,9 +70,11 @@ export const Timeline = (props) => {
           placeholder="Faça uma publicação"
           buttonText="Publicar"
         />
-        {posts.map((post) => (
-          <Post data={post} />
-        ))}
+        {postList.length === 0 ? (
+          <p>Loading...</p>
+        ) : (
+          postList.map((post) => <Post data={post} />)
+        )}
       </div>
     </div>
   )
