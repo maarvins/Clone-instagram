@@ -1,0 +1,26 @@
+button.like {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: black;
+  font-weight: 600;
+  opacity: 0.5;
+  transition: 0.2s;
+  margin-left: 20px;
+}
+
+button.like:hover {
+  opacity: 1;
+  color: var(--red);
+}
+
+.count-like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like-icon {
+  padding: 4px 3px 0;
+  margin-right: 2px;
+}

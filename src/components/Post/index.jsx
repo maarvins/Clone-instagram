@@ -1,19 +1,24 @@
 import Avatar from "../Avatar"
 import {CommentList} from "../Comments"
 import CommentForm from "../CommentForm"
+import LikeBtn from "../LikeBtn"
+
 import "./styles.css"
 
 function Post(props) {
   return (
-    <div className="post-container" onClick={() => props.onClick()}>
-      <Avatar name={props.data.user?.name} createdAt={props.data.createdAt} />
-
+    <div className="post-container">
+      <div className="post-header">
+        <Avatar name={props.data.user?.name} createdAt={props.data.createdAt} />
+        <LikeBtn data={props.data} />
+      </div>
       {props && props.data && props.data.photoUrl ? (
         <img
-          style={{marginTop: 10}}
+          style={{marginTop: 10, cursor: "pointer"}}
           src={props.data.photoUrl}
           width="100%"
           alt="river"
+          onClick={() => props.onClick()}
         />
       ) : (
         <p className="post-message">
@@ -23,7 +28,7 @@ function Post(props) {
           }
         </p>
       )}
-      <CommentList comments={props.data.comments} />
+      <CommentList comments={props.data.lastComment} />
       <CommentForm buttonText="Comentar" placeholder="Escreva um comentário" />
     </div>
   )

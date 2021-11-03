@@ -13,9 +13,10 @@ const CommentList = (props) => {
   return (
     <div className="comments-container">
       {props.comments ? (
-        props.comments.map((comment) => (
-          <Comment message={comment.message} userName={comment.username} />
-        ))
+        <Comment
+          message={props.comments.text}
+          userName={props.comments.user.name}
+        />
       ) : (
         <span style={{opacity: 0.4, fontSize: "14px"}}>
           Seja o primeiro a comentar!
