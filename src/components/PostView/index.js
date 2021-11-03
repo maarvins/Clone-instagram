@@ -21,7 +21,7 @@ export const PostView = (props) => {
 
   console.log(props)
   return (
-    <div>
+    <div style={{maxWidth: "614px", margin: "auto"}}>
       <Header />
       {singlePost && <Post data={singlePost} />}
     </div>
