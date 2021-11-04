@@ -1,6 +1,4 @@
-<h1 align="center">
-    <img alt="Instagram-clone" src="public/assets/instagram-logo.png" width="160px">
-</h1>
+
 
 <p align="center">
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -19,9 +17,7 @@
 
 <br>
 
-<p align="center">
-  <img alt="login view" src="public/assets/print-app.png">
-</p>
+
 
 ## 🧪 Technologies
 
