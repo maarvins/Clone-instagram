@@ -6,7 +6,7 @@ import {PostView} from "./components/PostView"
 
 import "./App.css"
 
-//ROTAS PRIVADAS - ACESSO SOMENTE AO ESTAR LOGADO
+//ROTAS PRIVADAS - ACESSO SOMENTE AO ESTAR LOGADO NO SERVIDOR
 const PrivatesRoutes = () => {
   return (
     <Router>
