@@ -16,7 +16,6 @@ function LikeBtn(props) {
             {
               await api.post(`/post/${props.data.id}/like`)
             } catch (error) {
-            console.log("Erro inesperado")
             console.error(error)
           }
           api.get(`/post/${props.data.id}`).then((response) => {
