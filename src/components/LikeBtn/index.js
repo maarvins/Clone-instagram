@@ -13,7 +13,6 @@ function LikeBtn(props) {
         className="like"
         onClick={async () => {
           try {
-            {
               await api.post(`/post/${props.data.id}/like`)
             } catch (error) {
             console.error(error)
